@@ -7,7 +7,9 @@ package controller;
 
 import dao.PostDAO;
 import dao.UserDAO;
+import java.awt.GridBagConstraints;
 import java.util.ArrayList;
+import javax.swing.JPanel;
 import model.PostModel;
 import view.PostItemView;
 import view.PostListView;
@@ -26,18 +28,32 @@ public class PostController {
         this.currentUser = new UserDAO();
     }
 
-    public void listPost(PostListView postListView, PostItemView postItemView) {
-
+    public JPanel listPost(JPanel jpBody) {
         ArrayList<PostModel> list_posts = this.postDAO.getAll();
-
-        Object rowData[] = new Object[11];
+        GridBagConstraints constraints = new GridBagConstraints();
+        int y = 0;
 
         for (PostModel post : list_posts) {
+            PostItemView postItemView = new PostItemView();
             postItemView.getTitle().setText(post.getTitle());
+            System.out.println(post.getContent().length());
+        
+//            if(post.getContent().length() <= 1000){
+//                  postItemView.getContent().setText(post.getContent() + " ...t");
+//            }else{
+//                 postItemView.getContent().setText(post.getContent().substring(0, 1000) + " ...y"); 
+//            }
+           postItemView.getContent().setText(post.getContent());
             postItemView.getdate().setText(post.getCreate_at());
             postItemView.getAuthor().setText("Mr Jhon");
-            postListView.add(postItemView);
+            //constraints.fill = GridBagConstraints.HORIZONTAL;
+            constraints.gridx = 0;
+            constraints.gridy = y;
+            jpBody.add(postItemView, constraints);
+            y++;
         }
+
+        return jpBody;
 
     }
 

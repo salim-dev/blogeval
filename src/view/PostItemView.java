@@ -62,6 +62,9 @@ public class PostItemView extends javax.swing.JPanel {
         lb_date = new javax.swing.JLabel();
         pb_read = new javax.swing.JButton();
 
+        setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, new java.awt.Color(51, 51, 51), null));
+        setMinimumSize(new java.awt.Dimension(600, 300));
+        setPreferredSize(new java.awt.Dimension(600, 300));
         setLayout(new java.awt.GridBagLayout());
 
         lb_title.setText("Titre");
@@ -69,16 +72,28 @@ public class PostItemView extends javax.swing.JPanel {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.ipadx = 5;
+        gridBagConstraints.ipady = 5;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
+        gridBagConstraints.insets = new java.awt.Insets(10, 25, 10, 25);
         add(lb_title, gridBagConstraints);
 
         lb_content.setText("Contenu");
+        lb_content.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        lb_content.setMaximumSize(new java.awt.Dimension(600, 50));
+        lb_content.setMinimumSize(new java.awt.Dimension(600, 50));
+        lb_content.setPreferredSize(new java.awt.Dimension(600, 50));
+        lb_content.setVerifyInputWhenFocusTarget(false);
+        lb_content.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
+        gridBagConstraints.ipadx = 2;
+        gridBagConstraints.ipady = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.FIRST_LINE_START;
+        gridBagConstraints.insets = new java.awt.Insets(10, 25, 10, 25);
         add(lb_content, gridBagConstraints);
 
         lb_author.setText("Auteur");
@@ -86,8 +101,11 @@ public class PostItemView extends javax.swing.JPanel {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.ipadx = 2;
+        gridBagConstraints.ipady = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
+        gridBagConstraints.insets = new java.awt.Insets(10, 25, 10, 25);
         add(lb_author, gridBagConstraints);
 
         lb_date.setText("Date");
@@ -95,8 +113,11 @@ public class PostItemView extends javax.swing.JPanel {
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.ipadx = 2;
+        gridBagConstraints.ipady = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
+        gridBagConstraints.insets = new java.awt.Insets(10, 25, 10, 25);
         add(lb_date, gridBagConstraints);
 
         pb_read.setText("Lire la suite");
@@ -104,8 +125,11 @@ public class PostItemView extends javax.swing.JPanel {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
         gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
+        gridBagConstraints.ipadx = 9;
+        gridBagConstraints.ipady = 5;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
-        gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
+        gridBagConstraints.insets = new java.awt.Insets(0, 13, 0, 13);
         add(pb_read, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 

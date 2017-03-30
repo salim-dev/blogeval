@@ -6,6 +6,7 @@
 package view;
 
 import controller.PostController;
+import javax.swing.JScrollPane;
 
 /**
  *
@@ -18,10 +19,10 @@ public class PostListView extends javax.swing.JPanel {
      */
     public PostListView(PostController postController) {
         initComponents();
-        
+        System.out.println("test");
         this.postController = postController;
-        PostItemView postItemView = new PostItemView();
-        this.postController.listPost(this, postItemView);
+      
+       this.jp_bodyListPost = this.postController.listPost(this.jp_bodyListPost);       
     }
 
     /**
@@ -34,6 +35,7 @@ public class PostListView extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
         jp_bodyListPost = new javax.swing.JPanel();
 
         setLayout(new java.awt.BorderLayout());
@@ -41,23 +43,20 @@ public class PostListView extends javax.swing.JPanel {
         jLabel1.setText("Liste des article");
         add(jLabel1, java.awt.BorderLayout.PAGE_START);
 
-        javax.swing.GroupLayout jp_bodyListPostLayout = new javax.swing.GroupLayout(jp_bodyListPost);
-        jp_bodyListPost.setLayout(jp_bodyListPostLayout);
-        jp_bodyListPostLayout.setHorizontalGroup(
-            jp_bodyListPostLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        jp_bodyListPostLayout.setVerticalGroup(
-            jp_bodyListPostLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 284, Short.MAX_VALUE)
-        );
+        jScrollPane1.setMinimumSize(new java.awt.Dimension(1020, 600));
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(1000, 600));
 
-        add(jp_bodyListPost, java.awt.BorderLayout.CENTER);
+        jp_bodyListPost.setBackground(new java.awt.Color(255, 255, 255));
+        jp_bodyListPost.setLayout(new java.awt.GridBagLayout());
+        jScrollPane1.setViewportView(jp_bodyListPost);
+
+        add(jScrollPane1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel jp_bodyListPost;
     // End of variables declaration//GEN-END:variables
 }

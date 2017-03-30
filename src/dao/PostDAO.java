@@ -18,8 +18,9 @@ import model.PostModel;
  */
 public class PostDAO extends DAO<PostModel, Long>{
 
-    public PostDAO() {
-        super();
+    public PostDAO() {       
+        super(); 
+        System.out.println("test");
     }
 
     
