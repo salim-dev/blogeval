@@ -10,7 +10,7 @@ package config;
  * @author Salim El Moussaoui <salim.elmoussaoui.afpa2017@gmail.com>
  */
 public class dbConfig {
-    public static final String DB_NAME = "";
-    public static final String DB_USER = "";
-    public static final String DB_PASSWORD = "";
+    public static final String DB_NAME = "blog";
+    public static final String DB_USER = "blog";
+    public static final String DB_PASSWORD = "blog";
 }
